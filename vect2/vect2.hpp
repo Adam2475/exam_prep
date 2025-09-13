@@ -10,7 +10,10 @@ class vect2 {
     private:
         int pos[2];
     public:
-        vect2() {};
+        vect2() {
+            this->pos[0] = 0;
+            this->pos[1] = 0;
+        };
         vect2(int x, int y) {
             this->pos[0] = x;
             this->pos[1] = y;
@@ -28,6 +31,37 @@ class vect2 {
             return *this;
         };
         ~vect2() {};
+
+
+        vect2 operator++(int) {
+            vect2 old = *this;
+            this->pos[0]++;
+            this->pos[1]++;
+            return old;
+        }
+
+        vect2 operator++() {
+            this->pos[0]++;
+            this->pos[1]++;
+            return *this;
+        }
+
+        vect2 operator--(int) {
+            vect2 old = *this;
+            this->pos[0]--;
+            this->pos[1]--;
+            return old;
+        }
+
+        vect2 operator--() {
+            this->pos[0]--;
+            this->pos[1]--;
+            return *this;
+        }
+
+        vect2 &operator+=(const vect2 &addend);
+        vect2 &operator-=(const vect2 &addend);
+        vect2 operator+(const vect2 &addend) const;
 
         friend ostream &operator<<(ostream &out, const vect2 &src);
 };
