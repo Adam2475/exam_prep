@@ -36,18 +36,18 @@ int	main(void)
 		std::cout << "(d >>= 2) = " << (d >>= (const bigint)2) << std::endl;
 		std::cout << "a = " << a << std::endl;
 		std::cout << "d = " << d << std::endl;
-		// std::cout << "(d < a) = " << (d < a) << std::endl;
-		// std::cout << "(d > a) = " << (d > a) << std::endl;
-		// std::cout << "(d == a) = " << (d == a) << std::endl;
-		// std::cout << "(d != a) = " << (d != a) << std::endl;
-		// std::cout << "(d == a) = " << (d == d) << std::endl;
-		// std::cout << "(d <= a) = " << (d <= a) << std::endl;
-		// std::cout << "(d >= a) = " << (d >= a) << std::endl;
+		std::cout << "(d < a) = " << (d < a) << std::endl;
+		std::cout << "(d > a) = " << (d > a) << std::endl;
+		std::cout << "(d == a) = " << (d == a) << std::endl;
+		std::cout << "(d != a) = " << (d != a) << std::endl;
+		std::cout << "(d == a) = " << (d == d) << std::endl;
+		std::cout << "(d <= a) = " << (d <= a) << std::endl;
+		std::cout << "(d >= a) = " << (d >= a) << std::endl;
 
-		// bigint x(1234);
-		// std::cout << std::endl;
-		// std::cout << "\"(x << 2)\"--> " << (x << 2) << "\n";   // prints 123400
-		// std::cout << "\"(x >>= 2)\"--> " << (x >>= 2) << "\n";   // prints   12}
+		bigint x(1234);
+		std::cout << std::endl;
+		std::cout << "\"(x << 2)\"--> " << (x << 2) << "\n";   // prints 123400
+		std::cout << "\"(x >>= 2)\"--> " << (x >>= 2) << "\n";   // prints   12}
 	}
 	return (0);
 }

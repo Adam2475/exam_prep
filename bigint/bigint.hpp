@@ -84,6 +84,43 @@ class bigint
 
             return *this;
         }
+        bool operator<(const bigint &src) const
+        {
+            if (this->num.length() < src.num.length())
+                return true;
+            else if (this->num.length() > src.num.length())
+                return false;
+            else
+                return this->num < src.num;
+        }
+        bool operator>(const bigint &src) const
+        {
+            if (this->num.length() > src.num.length())
+                return true;
+            else if (this->num.length() < src.num.length())
+                return false;
+            else
+                return this->num > src.num;
+        }
+
+        bool operator==(const bigint &src) const
+        {
+            return this->num == src.num;
+        }
+
+        bool operator!=(const bigint &src) const
+        {
+            return this->num != src.num;
+        }
+
+        bool operator<=(const bigint &src) const
+        {
+            return *this < src || *this == src;
+        }
+        bool operator>=(const bigint &src) const
+        {
+            return *this > src || *this == src;
+        }
 
         friend ostream &operator<<(ostream &out, const bigint &src);
 };
