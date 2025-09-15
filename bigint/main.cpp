@@ -1,11 +1,12 @@
 #include "bigint.hpp"
 
-// clear && c++ -g main.cpp bigint.cpp bigint.hpp && valgrind --leak-check=full --show-leak-kinds=all ./a.out
+// rm -f a.out && rm -f bigint.hpp.gch && clear && c++ -g main.cpp bigint.cpp bigint.hpp && valgrind --leak-check=full --show-leak-kinds=all ./a.out
 int	main(void)
 {
 	{
 		const bigint	a(42);
 		bigint			b(21), c, d(1337), e(d);
+		bigint 			f = 999999999;
 		
 		//All are in base10
 		std::cout << a << std::endl;
@@ -14,6 +15,8 @@ int	main(void)
 		std::cout << d << std::endl;
 		std::cout << e << std::endl;
 		std::cout << "a + b = " << a + b << std::endl; // a + b = 63
+		std::cout << "e + a = " << e + a << std::endl;
+		std::cout << "f + a = " << f + a << std::endl;
 		std::cout << "(c += a) = " << (c += a) << std::endl; // c = 42, donc (c += a) = 42
 		
 		std::cout << "\n\n" << std::endl;
@@ -33,18 +36,18 @@ int	main(void)
 		std::cout << "(d >>= 2) = " << (d >>= (const bigint)2) << std::endl;
 		std::cout << "a = " << a << std::endl;
 		std::cout << "d = " << d << std::endl;
-		std::cout << "(d < a) = " << (d < a) << std::endl;
-		std::cout << "(d > a) = " << (d > a) << std::endl;
-		std::cout << "(d == a) = " << (d == a) << std::endl;
-		std::cout << "(d != a) = " << (d != a) << std::endl;
-		std::cout << "(d == a) = " << (d == d) << std::endl;
-		std::cout << "(d <= a) = " << (d <= a) << std::endl;
-		std::cout << "(d >= a) = " << (d >= a) << std::endl;
+		// std::cout << "(d < a) = " << (d < a) << std::endl;
+		// std::cout << "(d > a) = " << (d > a) << std::endl;
+		// std::cout << "(d == a) = " << (d == a) << std::endl;
+		// std::cout << "(d != a) = " << (d != a) << std::endl;
+		// std::cout << "(d == a) = " << (d == d) << std::endl;
+		// std::cout << "(d <= a) = " << (d <= a) << std::endl;
+		// std::cout << "(d >= a) = " << (d >= a) << std::endl;
 
-		bigint x(1234);
-		std::cout << std::endl;
-		std::cout << "\"(x << 2)\"--> " << (x << 2) << "\n";   // prints 123400
-		std::cout << "\"(x >>= 2)\"--> " << (x >>= 2) << "\n";   // prints   12}
+		// bigint x(1234);
+		// std::cout << std::endl;
+		// std::cout << "\"(x << 2)\"--> " << (x << 2) << "\n";   // prints 123400
+		// std::cout << "\"(x >>= 2)\"--> " << (x >>= 2) << "\n";   // prints   12}
 	}
 	return (0);
 }

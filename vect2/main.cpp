@@ -16,9 +16,9 @@ int	main(void)
 	std::cout << "v4-- = " << v4-- << std::endl;// 2, 3
 	std::cout << "v4-- = " << --v4 << std::endl;// 1, 2
 
-	// std::cout << "[Personal Test] v1 == v1-> " << (v1 == v1) << std::endl;
-	// std::cout << "[Personal Test] v1 != v2-> " << (v1 != v2) << std::endl;
-	// std::cout << "[Personal Test] v1 != v1-> " << (v1 != v1) << std::endl;
+	std::cout << "[Personal Test] v1 == v1-> " << (v1 == v1) << std::endl;
+	std::cout << "[Personal Test] v1 != v2-> " << (v1 != v2) << std::endl;
+	std::cout << "[Personal Test] v1 != v1-> " << (v1 != v1) << std::endl;
 
 	v2 += v3;
 	std::cout << "v2 += v3-> " << v2 << std::endl;// 2, 4
